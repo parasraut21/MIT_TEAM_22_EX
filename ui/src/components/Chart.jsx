@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 
 const Chart_ = (props) => {
-  const [matchedCurrency, setMatchedCurrency] = useState("USD");
+  const [matchedCurrency, setMatchedCurrency] = useState("U.S. dollar   (USD)");
+  const [matchedbCurrency, setMatchedBCurrency] = useState("U.S. dollar   (USD)");
   const [chartData, setChartData] = useState({
     options: {
       chart: {
@@ -36,6 +37,9 @@ const Chart_ = (props) => {
         const matchedCurrency = data.find((currency) =>
           currency.endsWith(`(${props.curr})`)
         );
+        const matchedBCurrency = data.find((currency) =>
+        currency.endsWith(`(${props.base})`)
+      );
 
         console.log("Matched currency:", matchedCurrency);
 
@@ -45,6 +49,14 @@ const Chart_ = (props) => {
         }else{
           alert("No data found")
         }
+
+        if(matchedBCurrency){
+          setMatchedBCurrency(matchedBCurrency);
+        }else{
+          alert("No data found")
+        }
+
+
       } catch (error) {
         console.error(error);
       }
@@ -107,7 +119,7 @@ const Chart_ = (props) => {
   //   }
   // };
 
-  const fetchDataCurrency2 = async (matchedCurrency) => {
+  const fetchDataCurrency2 = async (matchedCurrency,matchedbCurrency) => {
     try {
       const response = await fetch("http://localhost:5000/exchangeRate", {
         method: "POST",
@@ -115,7 +127,7 @@ const Chart_ = (props) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          baseCurrency: "Algerian dinar   (DZD)",  // Update with the desired base currency
+          baseCurrency: matchedbCurrency,  // Update with the desired base currency
           targetCurrency: matchedCurrency,
           startDate: props.s ? formatDate(props.s) : '3-Jan-12',
           endDate: props.e ? formatDate(props.e) : '25-Aug-22',
@@ -146,13 +158,14 @@ const Chart_ = (props) => {
     }
   };
   
-
+console.log("matchedCurrency",matchedCurrency,matchedbCurrency)
   useEffect(() => {
     // This useEffect runs when matchedCurrency changes
     // Call fetchDataCurrency here to ensure it runs with the updated matchedCurrency
     // fetchDataCurrency(matchedCurrency);
-    fetchDataCurrency2(matchedCurrency);
-  }, [matchedCurrency]);
+    fetchDataCurrency2(matchedCurrency,matchedbCurrency);
+   
+  }, [matchedCurrency,matchedbCurrency]);
   useEffect(() => {
     // Replace this with your actual API endpoint for fetching currency options
     fetch("http://localhost:5000/_2012/columns")
@@ -172,8 +185,8 @@ const Chart_ = (props) => {
     // This useEffect runs when matchedCurrency, props.s, or props.e changes
     // Call fetchDataCurrency here to ensure it runs with the updated values
     // fetchDataCurrency(matchedCurrency, props.s, props.e);
-    fetchDataCurrency2(matchedCurrency, props.s, props.e);
-  }, [matchedCurrency, props.s, props.e]);
+    fetchDataCurrency2(matchedCurrency, matchedbCurrency,props.s, props.e);
+  }, [matchedCurrency, matchedbCurrency,props.s, props.e]);
   return (
     <div className="app">
       <div className="row">
