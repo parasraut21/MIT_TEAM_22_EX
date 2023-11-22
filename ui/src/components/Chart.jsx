@@ -138,7 +138,8 @@ const Chart_ = (props) => {
             options={chartData.options}
             series={chartData.series}
             type="line"
-            width="500"
+            width="800"
+            height="400"
           />
         </div>
       </div>
