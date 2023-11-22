@@ -45,6 +45,8 @@ function App() {
     position: "relative"
   }
 const currencyCodeFromToCurrency = toCurrency.match(/[A-Z]{3}/)?.[0];
+const base = fromCurrency.match(/[A-Z]{3}/)?.[0];
+
 
 
 const [currencyOptions, setCurrencyOptions] = useState([]);
@@ -117,7 +119,7 @@ const [endDate, setEndDate] = useState("");
       </label>
       </Typography>
       <Typography fontSize="10px" sx={{ marginTop: "4rem"}}>
-      <Chart_ curr={currencyCodeFromToCurrency} s={startDate} e={endDate} />
+      <Chart_  base={base} curr={currencyCodeFromToCurrency} s={startDate} e={endDate} />
       </Typography>
      
     </Container>
