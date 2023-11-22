@@ -42,6 +42,8 @@ const Chart_ = (props) => {
         if (matchedCurrency) {
           // If the currency code matches, set the matched currency
           setMatchedCurrency(matchedCurrency);
+        }else{
+          alert("No data found")
         }
       } catch (error) {
         console.error(error);
@@ -63,28 +65,69 @@ const Chart_ = (props) => {
   // Separate fetchData function for /currency API
 
   console.log("*****=++++++++++++++==",formatDate(props.s)) 
-  const fetchDataCurrency = async (matchedCurrency) => {
+  // const fetchDataCurrency = async (matchedCurrency) => {
+  //   try {
+  //     const response = await fetch("http://localhost:5000/currency", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         currency: matchedCurrency,
+  //         startDate: props.s? formatDate(props.s):'3-Jan-12',
+  //         endDate: props.e?formatDate(props.e):'25-Aug-22',
+  //       }),
+  //     });
+  //     const data = await response.json();
+  
+
+  //     const allDates = data.reduce((dates, yearData) => {
+  //       // Concatenate all dates from each year
+  //       return dates.concat(yearData.data.map((entry) => entry.Date));
+  //     }, [props.s,props.e ]);
+
+  //     // Update the state in a callback to ensure it's based on the latest state
+  //     setChartData((prevChartData) => ({
+  //       ...prevChartData,
+  //       options: {
+  //         ...prevChartData.options,
+  //         xaxis: {
+  //           categories: allDates,
+  //         },
+  //       },
+  //       series: data.map((yearData) => ({
+  //         name: `series-${yearData.year}`,
+  //         data: yearData.data.map((entry) =>
+  //           parseFloat(entry[matchedCurrency]) || 0
+  //         ),
+  //       })),
+  //     }));
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  const fetchDataCurrency2 = async (matchedCurrency) => {
     try {
-      const response = await fetch("http://localhost:5000/currency", {
+      const response = await fetch("http://localhost:5000/exchangeRate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          currency: matchedCurrency,
-          startDate: props.s? formatDate(props.s):'3-Jan-12',
-          endDate: props.e?formatDate(props.e):'25-Aug-22',
+          baseCurrency: "Algerian dinar   (DZD)",  // Update with the desired base currency
+          targetCurrency: matchedCurrency,
+          startDate: props.s ? formatDate(props.s) : '3-Jan-12',
+          endDate: props.e ? formatDate(props.e) : '25-Aug-22',
         }),
       });
       const data = await response.json();
+      console.log("data",data)
   
-
       const allDates = data.reduce((dates, yearData) => {
-        // Concatenate all dates from each year
         return dates.concat(yearData.data.map((entry) => entry.Date));
-      }, [props.s,props.e ]);
-
-      // Update the state in a callback to ensure it's based on the latest state
+      }, []);
+  
       setChartData((prevChartData) => ({
         ...prevChartData,
         options: {
@@ -95,20 +138,20 @@ const Chart_ = (props) => {
         },
         series: data.map((yearData) => ({
           name: `series-${yearData.year}`,
-          data: yearData.data.map((entry) =>
-            parseFloat(entry[matchedCurrency]) || 0
-          ),
+          data: yearData.data.map((entry) => entry.ExchangeRate || 0),
         })),
       }));
     } catch (error) {
       console.error(error);
     }
   };
+  
 
   useEffect(() => {
     // This useEffect runs when matchedCurrency changes
     // Call fetchDataCurrency here to ensure it runs with the updated matchedCurrency
-    fetchDataCurrency(matchedCurrency);
+    // fetchDataCurrency(matchedCurrency);
+    fetchDataCurrency2(matchedCurrency);
   }, [matchedCurrency]);
   useEffect(() => {
     // Replace this with your actual API endpoint for fetching currency options
@@ -128,7 +171,8 @@ const Chart_ = (props) => {
   useEffect(() => {
     // This useEffect runs when matchedCurrency, props.s, or props.e changes
     // Call fetchDataCurrency here to ensure it runs with the updated values
-    fetchDataCurrency(matchedCurrency, props.s, props.e);
+    // fetchDataCurrency(matchedCurrency, props.s, props.e);
+    fetchDataCurrency2(matchedCurrency, props.s, props.e);
   }, [matchedCurrency, props.s, props.e]);
   return (
     <div className="app">
