@@ -16,7 +16,7 @@ const DateRangePicker = () => {
       .then((response) => response.json())
       .then((data) => {
         // Assuming the API returns an array of currency options
-        console.log("********",data)
+     
         setCurrencyOptions(data);
       })
       .catch((error) => {
@@ -26,7 +26,7 @@ const DateRangePicker = () => {
 
   return (
     <div className="date-range-picker-container">
-      {/* Dropdown for currency options */}
+    
       <label>
         Select Currency:
         <select className="currency-dropdown">
@@ -38,7 +38,6 @@ const DateRangePicker = () => {
 </select>
       </label>
 
-      {/* Input field for start date */}
       <label>
         Start Date:
         <input

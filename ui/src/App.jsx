@@ -45,7 +45,30 @@ function App() {
     position: "relative"
   }
 const currencyCodeFromToCurrency = toCurrency.match(/[A-Z]{3}/)?.[0];
-console.log("-----",currencyCodeFromToCurrency)
+
+
+const [currencyOptions, setCurrencyOptions] = useState([]);
+  // Fetch currency options on component mount
+  useEffect(() => {
+    // Replace this with your actual API endpoint for fetching currency options
+    fetch("http://localhost:5000/_2012/columns")
+      .then((response) => response.json())
+      .then((data) => {
+        // Assuming the API returns an array of currency options
+     
+        setCurrencyOptions(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching currency options:", error);
+      });
+  }, []); // Empty dependency array ensures the effect runs only once on mount
+
+
+// State for start and end dates
+const [startDate, setStartDate] = useState("");
+const [endDate, setEndDate] = useState("");
+
+
   return (
     <Container maxWidth="md" sx={boxStyles}>
       <Typography variant='h5' sx={{ marginBottom: "2rem"}}>Rate XE</Typography>
@@ -62,11 +85,39 @@ console.log("-----",currencyCodeFromToCurrency)
           <Typography variant='h5' sx={{ marginTop: "5px", fontWeight: "bold"}}>{resultCurrency*firstAmount} {toCurrency}</Typography>
         </Box>
       ) : ""}
-        <Typography fontSize="10px" sx={{ }}>
-       <DateRangePicker/>
+      <Typography fontSize="10px" sx={{ marginTop: "3rem"}}>
+      <label>
+        Select Currency:
+        <select className="currency-dropdown">
+  {currencyOptions.map((option) => (
+    <option key={option} value={option}>
+      {option}
+    </option>
+  ))}
+</select>
+      </label>
+
+      <label>
+        Start Date :
+        <input
+          type="date"
+          value={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
+          className="date-input"
+        />
+      </label>
+      <label>
+        End Date :
+        <input
+          type="date"
+          value={endDate}
+          onChange={(e) => setEndDate(e.target.value)}
+          className="date-input"
+        />
+      </label>
       </Typography>
-      <Typography fontSize="10px" sx={{ }}>
-      <Chart_ curr={currencyCodeFromToCurrency} />
+      <Typography fontSize="10px" sx={{ marginTop: "4rem"}}>
+      <Chart_ curr={currencyCodeFromToCurrency} s={startDate} e={endDate} />
       </Typography>
      
     </Container>
