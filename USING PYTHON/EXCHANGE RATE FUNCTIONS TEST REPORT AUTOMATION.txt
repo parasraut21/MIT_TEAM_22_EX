@@ -1,0 +1,48 @@
+EXCHANGE RATE FUNCTIONS TEST REPORT
+
+Data Loading Test
+Objective: Ensure the exchange rate dataset loads correctly and adheres to expected data structures.
+
+Test Steps:
+
+Load the exchange rate dataset with corrected date format.
+Set the index to 'Date'.
+Verify if the loaded data is in DataFrame format.
+Check if the 'Date' index is correctly set.
+Results:
+
+Test Data Loaded as DataFrame:
+Status: Pass
+Observation: The data loads successfully as a DataFrame.
+Test Date Index Is Set:
+Status: Pass
+Observation: The 'Date' index is appropriately set.
+Interpolation Test
+Objective: Ensure missing values are properly interpolated in the dataset.
+
+Test Steps:
+
+Interpolate missing values in the loaded dataset using the linear method.
+Check if any missing values remain after interpolation.
+Results:
+
+Test Interpolation Removes Missing Values:
+Status: Pass
+Observation: No missing values are present after interpolation.
+Availability of Years, Months, and Weeks
+Objective: Verify the availability of years, months, and weeks in the dataset.
+
+Test Steps:
+
+Extract unique years, months, and weeks from the dataset.
+Results:
+
+Test Availability of Years:
+Status: Pass
+Observation: Years are available in the dataset.
+Test Availability of Months:
+Status: Pass
+Observation: Months are available in the dataset.
+Test Availability of Weeks:
+Status: Pass
+Observation: Weeks are available in the dataset.
