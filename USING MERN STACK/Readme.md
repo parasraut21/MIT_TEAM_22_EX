@@ -1,68 +1,76 @@
-# Currency Data Application 
+﻿# Rate Exchange Website
 
-This project is a full-stack web application built with React for the frontend, Node.js for the backend, and MySQL for data storage. The application focuses on currency data management 
+## Setup Project In Localhost
+- **Simply clone the URL, navigate to the client folder in the terminal (cd client), and launch the website by typing npm start to set up my repository on your localhost**
 
-## Features
+## Project Description
 
-- Display and manage currency data.
+- This Rate Exchange website is a full-stack application that facilitates currency exchange. Developed using ReactJS for the frontend, Express.js for the backend, and MySQL Workbench for database management, the website showcases seamless currency conversion using real-time exchange rates.
 
-## Prerequisites
+## **Key Features:**
 
-Before you begin, ensure you have the following installed:
+**ReactJS Frontend:** 
+- The frontend of the website is built using ReactJS, providing a responsive and intuitive user interface for easy navigation and interaction.
 
-- [Node.js](https://nodejs.org/)
-- [MySQL](https://www.mysql.com/)
-- [React](https://reactjs.org/)
+**Express.js Backend:** 
+- The backend is powered by Express.js, handling requests, processing data, and communicating with the MySQL database to provide dynamic content to the users..
 
-## Getting Started
+**MySQL Database:** 
+- MySQL Workbench is utilized for efficient database management, storing and retrieving user data, transaction details, and exchange rates.
 
-1. Clone the repository:
+**Material-UI Integration:** 
+- Material-UI is employed for UI components, ensuring a consistent and visually appealing design throughout the website.
+**Context API:**
+- Context API is implemented for state management, enabling the website to maintain user preferences, selected currencies, and transaction history.
 
-   ```bash
-   git clone https://github.com/yourusername/currency-data-app.git
-   ```
-
-Set up the MySQL database:
-
-Create a database and import the provided SQL schema file.
-
-2. Install dependencies for the Node.js server:
-   cd currency-data-app/server
-   npm install
-
-3. Install dependencies for the React app:
-   cd ../ui
-   npm install
-
-4. Configure the database connection:
-   Update the MySQL connection details in the server's .env file.
-
-5. Start the Node.js server:
-   cd ../server
-   npm start
-
-6. Start the React app:
-   cd ../ui
-   npm start
-
-Project Structure
-currency-data-app/
-│
-├── ui/              # React App
-│   ├── public/
-│   └── src/
-│
-└── server/              # Node.js Server
-    ├── models/          # Database Models (e.g., Currency)
-    ├── routes/          # Express Routes (e.g., cleanUpRoute)
-    └── index.js         # Main Server File
+## Problem Statement
+Create a dashboard which will allow users to analyze the exchange rates between two currencies
+over a period of time. Users should have the option to select weekly, monthly, quarterly, and yearly
+charts. The dashboard should also display the date on which the rate was at its peak (highest) and
+the date on which it was at its lowest. Users should be able to print the data in a chart. Input will be
+currency exchange rate dataset between a currency pair and will be provided in a file format
+Use USD as Base Currency where first currency will always be USD and second currency will be
+variable. For instance, currency pairs could be USD/INR, USD/GBP, USD/EUR, USD/CAD etc.
 
 
-Configuration
-MySQL Connection: Update the MySQL connection details in the server's .env file.
-Port Configuration: The server runs on port 3001 by default. You can change this in the server's index.js file.
+## Tech Stack
+
+- Frontend Framework: ReactJS
+
+- Backend Framework: Express.js
+
+- Database Management: MySQL Workbench
+
+- Styling Framework: Material-UI
+
+- State Management: Context API
+
+**Frontend Dependencies:**
+- Axios: For making API requests to fetch real-time exchange rates.
+
+- React Router: For handling navigation within the website.
+
+## Project Demo
+
+**Demo Screenshots**
+![Home](https://github.com/parasraut21/MIT_TEAM_22_EX/assets/111653346/73293290-603e-43b4-94b9-04dc3bbdb72b)
+
+![Home2](https://github.com/parasraut21/MIT_TEAM_22_EX/assets/111653346/fe2bfced-f14c-4fcc-961b-338a65659dbc)
+
+![Home3](https://github.com/parasraut21/MIT_TEAM_22_EX/assets/111653346/85cfeb07-5895-46ff-a333-508564ec73e9)
+
+![Home4](https://github.com/parasraut21/MIT_TEAM_22_EX/assets/111653346/0858abff-53a2-4612-b75a-2f2ec2cb9d18)
+
+![Bothex](https://github.com/parasraut21/MIT_TEAM_22_EX/assets/111653346/db0db237-92fd-40a4-a9f4-4a84dc0af816)
+
+![Contact](https://github.com/parasraut21/MIT_TEAM_22_EX/assets/111653346/8905ece3-d3db-49b8-a147-b60897aac3bd)
+
+![About](https://github.com/parasraut21/MIT_TEAM_22_EX/assets/111653346/c9e308bc-e91a-49f2-a3f5-0497deae56bf)
+
+![database](https://github.com/parasraut21/MIT_TEAM_22_EX/assets/111653346/1b3c7ba3-d7aa-4533-b6e1-ba03648482b3)
 
 
-# Your Project Name
+## Made By
 
-![Project Logo]([https://postimg.cc/Cdh5XyBV](https://i.postimg.cc/XNF5Z4nX/digu-122.jpg)https://i.postimg.cc/XNF5Z4nX/digu-122.jpg)
+- **TEAM 22**
+
