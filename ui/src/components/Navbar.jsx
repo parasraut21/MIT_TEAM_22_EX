@@ -100,7 +100,7 @@ const Header = () => {
   return (
     <>
       <Nav>
-        <Logo>CSS Tricks</Logo>
+        <Logo>Rate Exchange</Logo>
         <Menu>
           <Item>
             <Link target="#" href="https://www.instagram.com/igor_dumencic/">

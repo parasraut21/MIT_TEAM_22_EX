@@ -2,8 +2,15 @@
 
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
+import { useContext} from 'react'
+import { CurrencyContext } from "../context/CurrencyContext";
+
 
 const Chart_ = (props) => {
+  const {
+   setMaxAmount,
+    setMinAmount,
+  } = useContext(CurrencyContext);
   const [matchedCurrency, setMatchedCurrency] = useState("U.S. dollar   (USD)");
   const [matchedbCurrency, setMatchedBCurrency] = useState("U.S. dollar   (USD)");
   const [chartData, setChartData] = useState({
@@ -77,47 +84,7 @@ const Chart_ = (props) => {
   // Separate fetchData function for /currency API
 
   console.log("*****=++++++++++++++==",formatDate(props.s)) 
-  // const fetchDataCurrency = async (matchedCurrency) => {
-  //   try {
-  //     const response = await fetch("http://localhost:5000/currency", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         currency: matchedCurrency,
-  //         startDate: props.s? formatDate(props.s):'3-Jan-12',
-  //         endDate: props.e?formatDate(props.e):'25-Aug-22',
-  //       }),
-  //     });
-  //     const data = await response.json();
-  
-
-  //     const allDates = data.reduce((dates, yearData) => {
-  //       // Concatenate all dates from each year
-  //       return dates.concat(yearData.data.map((entry) => entry.Date));
-  //     }, [props.s,props.e ]);
-
-  //     // Update the state in a callback to ensure it's based on the latest state
-  //     setChartData((prevChartData) => ({
-  //       ...prevChartData,
-  //       options: {
-  //         ...prevChartData.options,
-  //         xaxis: {
-  //           categories: allDates,
-  //         },
-  //       },
-  //       series: data.map((yearData) => ({
-  //         name: `series-${yearData.year}`,
-  //         data: yearData.data.map((entry) =>
-  //           parseFloat(entry[matchedCurrency]) || 0
-  //         ),
-  //       })),
-  //     }));
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+ 
 
   const fetchDataCurrency2 = async (matchedCurrency,matchedbCurrency) => {
     try {
@@ -134,7 +101,17 @@ const Chart_ = (props) => {
         }),
       });
       const data = await response.json();
-      console.log("data",data)
+    
+
+      data.forEach(yearData => {
+        console.log(`Year: ${yearData.year}`);
+        console.log('Exchange Rate Data:', yearData.data);
+        console.log('Max Rate Date:', yearData.maxRateDate);
+        setMaxAmount(yearData.maxRateDate)
+        console.log('Min Rate Date:', yearData.minRateDate);
+        setMinAmount(yearData.minRateDate)
+        console.log('-----------------------');
+      });
   
       const allDates = data.reduce((dates, yearData) => {
         return dates.concat(yearData.data.map((entry) => entry.Date));

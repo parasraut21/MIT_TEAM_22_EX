@@ -6,6 +6,8 @@ const CurrencyProvider = ({ children }) => {
   const [fromCurrency, setFromCurrency] = useState("🇺🇸 USD - United States");
   const [toCurrency, setToCurrency] = useState("🇦🇺 AUD - Australia");
   const [firstAmount, setFirstAmount] = useState("");
+  const [maxAmount, setMaxAmount] = useState(0);
+  const [minAmount, setMinAmount] = useState(0);
 
   const value = {
     fromCurrency,
@@ -13,7 +15,11 @@ const CurrencyProvider = ({ children }) => {
     toCurrency,
     setToCurrency,
     firstAmount,
-    setFirstAmount
+    setFirstAmount,
+    maxAmount,
+    setMaxAmount,
+    minAmount,
+    setMinAmount,
   };
   return (
     <CurrencyContext.Provider value={value}>

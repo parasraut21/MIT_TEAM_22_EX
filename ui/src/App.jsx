@@ -14,6 +14,8 @@ function App() {
     toCurrency,
     setToCurrency,
     firstAmount,
+    minAmount,
+    maxAmount,
   } = useContext(CurrencyContext);
   const [resultCurrency, setResultCurrency] = useState(0);
   const codeFromCurrency = fromCurrency.split(" ")[1];
@@ -122,6 +124,16 @@ const [endDate, setEndDate] = useState("");
       <Chart_  base={base} curr={currencyCodeFromToCurrency} s={startDate} e={endDate} />
       </Typography>
      
+  <Box sx={{ textAlign: "left", marginTop: "1rem"}}>
+    <Typography variant='h5' sx={{ marginTop: "5px", fontWeight: "bold"}}>{fromCurrency}  -  {toCurrency}</Typography>
+    <Typography variant='body2' sx={{ marginTop: "5px" }}>
+      Max Amount: {maxAmount}
+    </Typography>
+    <Typography variant='body2' sx={{ marginTop: "5px" }}>
+      Min Amount: {minAmount}  
+    </Typography>
+  </Box>
+
     </Container>
   )
 }
