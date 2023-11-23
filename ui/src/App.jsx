@@ -18,6 +18,7 @@ import {
 } from "react-router-dom";
 import ContactForm from './components/Contact'
 import Bothex from './components/Bothex'
+import AboutPage from './components/AboutPage'
 function App() {
   const {
     fromCurrency,
@@ -92,10 +93,11 @@ const [endDate, setEndDate] = useState("");
               <Route exact path='/' element={<Amount/>} />
               <Route exact path='/bothex' element={<Bothex/>} />
               <Route exact path='/Contact' element={<ContactForm/>} />
+              <Route exact path='/aboutus' element={<AboutPage/>} />
        
        </Routes>
             </Router>
-       <Footer/>
+       {/* <Footer/> */}
     </>
    
   )

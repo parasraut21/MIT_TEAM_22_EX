@@ -106,7 +106,7 @@ const commonSelectStyles = {
         </Box>
       ) : ""}
       <Typography fontSize="10px" sx={{ marginTop: "3rem" }}>
-  <label>
+  {/* <label>
    <b>Select Currency : </b> 
     <select className="currency-dropdown" style={commonSelectStyles}>
       {currencyOptions.map((option) => (
@@ -115,7 +115,7 @@ const commonSelectStyles = {
         </option>
       ))}
     </select>
-  </label>
+  </label> */}
 
   <label style={{marginLeft:"20px"}}>
     <b> Start Date : </b>
@@ -143,7 +143,7 @@ const commonSelectStyles = {
   </label>
 </Typography>
       <Typography fontSize="10px" sx={{ marginTop: "4rem"}}>
-      <Chart_  base="U.S. dollar   (USD)" curr={currencyCodeFromToCurrency} s={startDate} e={endDate} />
+      <Chart_  base={base} curr={currencyCodeFromToCurrency} s={startDate} e={endDate} />
       </Typography>
      
   <Box sx={{ textAlign: "left", marginTop: "1rem"}}>

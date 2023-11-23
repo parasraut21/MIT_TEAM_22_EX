@@ -53,14 +53,10 @@ const Chart_ = (props) => {
         if (matchedCurrency) {
           // If the currency code matches, set the matched currency
           setMatchedCurrency(matchedCurrency);
-        }else{
-          alert("No data found")
         }
 
         if(matchedBCurrency){
           setMatchedBCurrency(matchedBCurrency);
-        }else{
-          alert("No data found")
         }
 
 

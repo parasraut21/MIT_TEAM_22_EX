@@ -101,12 +101,12 @@ const commonSelectStyles = {
 
       {firstAmount ? (
         <Box sx={{ textAlign: "left", marginTop: "1rem"}}>
-          <Typography>{firstAmount} {fromCurrency} =</Typography>
+          <Typography style={{color:"black"}} >{firstAmount} {fromCurrency} =</Typography>
           <Typography variant='h5' sx={{ marginTop: "5px", fontWeight: "bold"}}>{resultCurrency*firstAmount} {toCurrency}</Typography>
         </Box>
       ) : ""}
       <Typography fontSize="10px" sx={{ marginTop: "3rem" }}>
-  <label>
+  {/* <label>
    <b>Select Currency : </b> 
     <select className="currency-dropdown" style={commonSelectStyles}>
       {currencyOptions.map((option) => (
@@ -115,7 +115,7 @@ const commonSelectStyles = {
         </option>
       ))}
     </select>
-  </label>
+  </label> */}
 
   <label style={{marginLeft:"20px"}}>
     <b> Start Date : </b>
@@ -149,16 +149,16 @@ const commonSelectStyles = {
   <Box sx={{ textAlign: "left", marginTop: "1rem"}}>
     <Typography variant='h5' sx={{ marginTop: "5px", fontWeight: "bold"}}>{fromCurrency}  -  {toCurrency}</Typography>
     <Typography variant='body2' sx={{ marginTop: "5px" }}>
-      <h2>
-      <b> Max Amount: {maxAmount}</b>
+      <h2 style={{color:"black"}}>
+      <b> Max Amount Date : {maxAmount}</b>
       </h2>
      
      
     </Typography>
     <Typography variant='body2' sx={{ marginTop: "5px" }}>
-      <h2>
+      <h2 style={{color:"black"}} >
       <b>
-      Min Amount: {minAmount}  
+      Min Amount Date : {minAmount}  
       </b>
       </h2>
      
