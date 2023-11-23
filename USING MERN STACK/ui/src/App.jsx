@@ -19,6 +19,7 @@ import {
 import ContactForm from './components/Contact'
 import Bothex from './components/Bothex'
 import AboutPage from './components/AboutPage'
+import ExchangePage from './components/ExchangePage'
 function App() {
   const {
     fromCurrency,
@@ -94,6 +95,7 @@ const [endDate, setEndDate] = useState("");
               <Route exact path='/bothex' element={<Bothex/>} />
               <Route exact path='/Contact' element={<ContactForm/>} />
               <Route exact path='/aboutus' element={<AboutPage/>} />
+              <Route exact path='/curr' element={<ExchangePage/>} />
        
        </Routes>
             </Router>

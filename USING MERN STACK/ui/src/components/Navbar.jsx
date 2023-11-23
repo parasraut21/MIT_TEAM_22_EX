@@ -49,6 +49,10 @@ const Navbar = () => {
           <li>
             <a href="/bothex">Both Exchange</a>
           </li>
+
+          <li>
+            <a href="/curr">Currencies Page</a>
+          </li>
           
           <li>
             <a href="/aboutus">About Us</a>
