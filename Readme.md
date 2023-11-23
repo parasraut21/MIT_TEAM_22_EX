@@ -50,14 +50,15 @@ Create a database and import the provided SQL schema file.
 Project Structure
 currency-data-app/
 │
-├── ui/ # React App
-│ ├── public/
-│ └── src/
+├── ui/              # React App
+│   ├── public/
+│   └── src/
 │
-└── server/ # Node.js Server
-├── models/ # Database Models (e.g., Currency)
-├── routes/ # Express Routes (e.g., cleanUpRoute)
-└── index.js # Main Server File
+└── server/              # Node.js Server
+    ├── models/          # Database Models (e.g., Currency)
+    ├── routes/          # Express Routes (e.g., cleanUpRoute)
+    └── index.js         # Main Server File
+
 
 Configuration
 MySQL Connection: Update the MySQL connection details in the server's .env file.
