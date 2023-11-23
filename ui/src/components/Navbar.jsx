@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   useEffect(() => {
@@ -43,17 +43,20 @@ const Navbar = () => {
         </a>
         <ul className="links">
           <li>
-            <a href="#home">Home</a>
+          <a href="/">Dashboard</a>
           </li>
+
+          <li>
+            <a href="/bothex">Both Exchange</a>
+          </li>
+          
           <li>
             <a href="#about-us">About Us</a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="/contact">Contact</a>
           </li>
-          <li>
-            <a href="dashboard.html">Dashboard</a>
-          </li>
+         
           <li className="signin">
             <a href="signin.html">Sign In</a>
           </li>

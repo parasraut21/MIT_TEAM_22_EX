@@ -7,7 +7,7 @@ import SwitchCurrency from './SwitchCurrency'
 import { CurrencyContext } from '../context/CurrencyContext'
 import Chart_ from './Chart'
 
-function Amount() {
+function Bothex() {
   const {
     fromCurrency,
     setFromCurrency,
@@ -94,7 +94,7 @@ const commonSelectStyles = {
       <Typography variant='h5' sx={{ marginBottom: "2rem" ,marginTop:"-39px"}}>Rate XE</Typography>
       <Grid container spacing={2}>
         <InputAmout />
-        {/* <SelectCountry value={fromCurrency} setValue={setFromCurrency} label="From" /> */}
+        <SelectCountry value={fromCurrency} setValue={setFromCurrency} label="From" />
         <SwitchCurrency />
         <SelectCountry value={toCurrency} setValue={setToCurrency} label="To" />
       </Grid>
@@ -170,4 +170,4 @@ const commonSelectStyles = {
   )
 }
 
-export default Amount
+export default Bothex

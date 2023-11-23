@@ -10,7 +10,14 @@ import DateRangePicker from './components/design'
 import Amount from './components/Amount'
 import Footer from './components/Footer'
 import Header from './components/Navbar'
-import ExchangePage from './components/ExchangePage'
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+import ContactForm from './components/Contact'
+import Bothex from './components/Bothex'
 function App() {
   const {
     fromCurrency,
@@ -80,9 +87,14 @@ const [endDate, setEndDate] = useState("");
   return (
     <>
        <Header/>
- 
-       <Amount/>
-   
+       <Router>
+              <Routes>
+              <Route exact path='/' element={<Amount/>} />
+              <Route exact path='/bothex' element={<Bothex/>} />
+              <Route exact path='/Contact' element={<ContactForm/>} />
+       
+       </Routes>
+            </Router>
        <Footer/>
     </>
    
