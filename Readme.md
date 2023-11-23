@@ -67,4 +67,4 @@ Port Configuration: The server runs on port 3001 by default. You can change this
 
 # Your Project Name
 
-![Project Logo](https://postimg.cc/Cdh5XyBV)
+![Project Logo]([https://postimg.cc/Cdh5XyBV](https://i.postimg.cc/XNF5Z4nX/digu-122.jpg)https://i.postimg.cc/XNF5Z4nX/digu-122.jpg)
