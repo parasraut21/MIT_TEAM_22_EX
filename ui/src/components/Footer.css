@@ -1,30 +1,52 @@
+/* Footer.css */
+
 footer {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .exchange-rates {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .exchange-rates h3 {
-    color: #333;
-  }
-  
-  .exchange-rates ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .exchange-rates li {
-    margin: 10px 0;
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .exchange-rates li span {
-    font-weight: bold;
-    margin-right: 5px;
-  }
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+}
+
+.exchange-rates {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.exchange-rates h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.exchange-rates ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exchange-rates li {
+  margin: 10px 0;
+}
+
+.exchange-rates li span {
+  font-weight: bold;
+}
+
+/* Share icons */
+.share-icons {
+  margin-top: 20px;
+}
+
+.share-icons a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: #333;
+  font-size: 1.5em;
+}
+
+/* Add specific styles for Font Awesome icons */
+.share-icons a i {
+  transition: color 0.3s ease-in-out;
+}
+
+.share-icons a:hover i {
+  color: #007bff;
+}

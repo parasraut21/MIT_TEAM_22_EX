@@ -7,6 +7,10 @@ import SwitchCurrency from './components/SwitchCurrency'
 import { CurrencyContext } from './context/CurrencyContext'
 import Chart_ from './components/Chart'
 import DateRangePicker from './components/design'
+import Amount from './components/Amount'
+import Footer from './components/Footer'
+import Header from './components/Navbar'
+import ExchangePage from './components/ExchangePage'
 function App() {
   const {
     fromCurrency,
@@ -74,67 +78,14 @@ const [endDate, setEndDate] = useState("");
 
 
   return (
-    <Container maxWidth="md" sx={boxStyles}>
-      <Typography variant='h5' sx={{ marginBottom: "2rem"}}>Rate XE</Typography>
-      <Grid container spacing={2}>
-        <InputAmout />
-        <SelectCountry value={fromCurrency} setValue={setFromCurrency} label="From" />
-        <SwitchCurrency />
-        <SelectCountry value={toCurrency} setValue={setToCurrency} label="To" />
-      </Grid>
-
-      {firstAmount ? (
-        <Box sx={{ textAlign: "left", marginTop: "1rem"}}>
-          <Typography>{firstAmount} {fromCurrency} =</Typography>
-          <Typography variant='h5' sx={{ marginTop: "5px", fontWeight: "bold"}}>{resultCurrency*firstAmount} {toCurrency}</Typography>
-        </Box>
-      ) : ""}
-      <Typography fontSize="10px" sx={{ marginTop: "3rem"}}>
-      <label>
-        Select Currency:
-        <select className="currency-dropdown">
-  {currencyOptions.map((option) => (
-    <option key={option} value={option}>
-      {option}
-    </option>
-  ))}
-</select>
-      </label>
-
-      <label>
-        Start Date :
-        <input
-          type="date"
-          value={startDate}
-          onChange={(e) => setStartDate(e.target.value)}
-          className="date-input"
-        />
-      </label>
-      <label>
-        End Date :
-        <input
-          type="date"
-          value={endDate}
-          onChange={(e) => setEndDate(e.target.value)}
-          className="date-input"
-        />
-      </label>
-      </Typography>
-      <Typography fontSize="10px" sx={{ marginTop: "4rem"}}>
-      <Chart_  base={base} curr={currencyCodeFromToCurrency} s={startDate} e={endDate} />
-      </Typography>
-     
-  <Box sx={{ textAlign: "left", marginTop: "1rem"}}>
-    <Typography variant='h5' sx={{ marginTop: "5px", fontWeight: "bold"}}>{fromCurrency}  -  {toCurrency}</Typography>
-    <Typography variant='body2' sx={{ marginTop: "5px" }}>
-      Max Amount: {maxAmount}
-    </Typography>
-    <Typography variant='body2' sx={{ marginTop: "5px" }}>
-      Min Amount: {minAmount}  
-    </Typography>
-  </Box>
-
-    </Container>
+    <>
+       <Header/>
+ 
+       <Amount/>
+   
+       <Footer/>
+    </>
+   
   )
 }
 

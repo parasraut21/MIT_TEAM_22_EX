@@ -86,7 +86,55 @@ const Chart_ = (props) => {
   console.log("*****=++++++++++++++==",formatDate(props.s)) 
  
 
-  const fetchDataCurrency2 = async (matchedCurrency,matchedbCurrency) => {
+  // const fetchDataCurrency2 = async (matchedCurrency,matchedbCurrency) => {
+  //   try {
+  //     const response = await fetch("http://localhost:5000/exchangeRate", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         baseCurrency: matchedbCurrency,  // Update with the desired base currency
+  //         targetCurrency: matchedCurrency,
+  //         startDate: props.s ? formatDate(props.s) : '3-Jan-12',
+  //         endDate: props.e ? formatDate(props.e) : '25-Aug-22',
+  //       }),
+  //     });
+  //     const data = await response.json();
+    
+
+  //     data.forEach(yearData => {
+  //       console.log(`Year: ${yearData.year}`);
+  //       console.log('Exchange Rate Data:', yearData.data);
+  //       console.log('Max Rate Date:', yearData.maxRateDate);
+  //       setMaxAmount(yearData.maxRateDate)
+  //       console.log('Min Rate Date:', yearData.minRateDate);
+  //       setMinAmount(yearData.minRateDate)
+  //       console.log('-----------------------');
+  //     });
+  
+  //     const allDates = data.reduce((dates, yearData) => {
+  //       return dates.concat(yearData.data.map((entry) => entry.Date));
+  //     }, []);
+  
+  //     setChartData((prevChartData) => ({
+  //       ...prevChartData,
+  //       options: {
+  //         ...prevChartData.options,
+  //         xaxis: {
+  //           categories: allDates,
+  //         },
+  //       },
+  //       series: data.map((yearData) => ({
+  //         name: `series-${yearData.year}`,
+  //         data: yearData.data.map((entry) => entry.ExchangeRate || 0),
+  //       })),
+  //     }));
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+  const fetchDataCurrency2 = async (matchedCurrency, matchedbCurrency) => {
     try {
       const response = await fetch("http://localhost:5000/exchangeRate", {
         method: "POST",
@@ -100,16 +148,22 @@ const Chart_ = (props) => {
           endDate: props.e ? formatDate(props.e) : '25-Aug-22',
         }),
       });
+  
       const data = await response.json();
-    
-
+  
+      // Check if data is an array before using forEach
+      if (!Array.isArray(data)) {
+        console.error('Invalid data format:', data);
+        return;
+      }
+  
       data.forEach(yearData => {
         console.log(`Year: ${yearData.year}`);
         console.log('Exchange Rate Data:', yearData.data);
         console.log('Max Rate Date:', yearData.maxRateDate);
         setMaxAmount(yearData.maxRateDate)
         console.log('Min Rate Date:', yearData.minRateDate);
-        setMinAmount(yearData.minRateDate)
+        setMinAmount(yearData.minRateDate);
         console.log('-----------------------');
       });
   
@@ -134,6 +188,7 @@ const Chart_ = (props) => {
       console.error(error);
     }
   };
+  
   
 console.log("matchedCurrency",matchedCurrency,matchedbCurrency)
   useEffect(() => {
