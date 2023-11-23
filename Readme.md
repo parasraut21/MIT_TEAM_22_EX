@@ -1,12 +1,10 @@
-# Currency Data Application with ChatGPT
+# Currency Data Application 
 
-This project is a full-stack web application built with React for the frontend, Node.js for the backend, and MySQL for data storage. The application focuses on currency data management and includes integration with ChatGPT for additional features.
+This project is a full-stack web application built with React for the frontend, Node.js for the backend, and MySQL for data storage. The application focuses on currency data management 
 
 ## Features
 
 - Display and manage currency data.
-- Clean up extra spaces in currency names.
-- Integration with ChatGPT for natural language interaction.
 
 ## Prerequisites
 
@@ -64,4 +62,7 @@ Configuration
 MySQL Connection: Update the MySQL connection details in the server's .env file.
 Port Configuration: The server runs on port 3001 by default. You can change this in the server's index.js file.
 
-Contributers
+
+# Your Project Name
+
+![Project Logo]([https://postimg.cc/Cdh5XyBV](https://i.postimg.cc/XNF5Z4nX/digu-122.jpg)https://i.postimg.cc/XNF5Z4nX/digu-122.jpg)
