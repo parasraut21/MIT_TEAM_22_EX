@@ -64,4 +64,7 @@ Configuration
 MySQL Connection: Update the MySQL connection details in the server's .env file.
 Port Configuration: The server runs on port 3001 by default. You can change this in the server's index.js file.
 
-Contributers
+
+# Your Project Name
+
+![Project Logo]([./images/logo.png](https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.mos.cms.futurecdn.net%2Fm5ADpuAdKTpadnUWmsCrHJ.jpg&tbnid=SgA8JuAbT5zYoM&vet=12ahUKEwibtsT0sNmCAxVYfWwGHWe9BbYQMygCegQIARBy..i&imgrefurl=https%3A%2F%2Fwww.creativebloq.com%2Ffeatures%2F6-famous-textless-logos-and-why-they-work&docid=NThFvsymDBmxOM&w=1129&h=653&q=logo&ved=2ahUKEwibtsT0sNmCAxVYfWwGHWe9BbYQMygCegQIARBy)https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.mos.cms.futurecdn.net%2Fm5ADpuAdKTpadnUWmsCrHJ.jpg&tbnid=SgA8JuAbT5zYoM&vet=12ahUKEwibtsT0sNmCAxVYfWwGHWe9BbYQMygCegQIARBy..i&imgrefurl=https%3A%2F%2Fwww.creativebloq.com%2Ffeatures%2F6-famous-textless-logos-and-why-they-work&docid=NThFvsymDBmxOM&w=1129&h=653&q=logo&ved=2ahUKEwibtsT0sNmCAxVYfWwGHWe9BbYQMygCegQIARBy)
