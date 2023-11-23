@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './Footer.css'; // Make sure to create this CSS file
+// Footer.js
+
+import React, { useState, useEffect } from "react";
+import "./Footer.css"; // Make sure to create this CSS file
 
 const Footer = () => {
   const [exchangeRates, setExchangeRates] = useState({});
@@ -7,11 +9,13 @@ const Footer = () => {
   useEffect(() => {
     const fetchExchangeRates = async () => {
       try {
-        const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const response = await fetch(
+          "https://api.exchangerate-api.com/v4/latest/USD"
+        );
         const data = await response.json();
         setExchangeRates(data.rates);
       } catch (error) {
-        console.error('Error fetching exchange rates:', error);
+        console.error("Error fetching exchange rates:", error);
       }
     };
 
@@ -19,19 +23,21 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer>
-      <div className="exchange-rates">
-        <h3>Live Exchange Rates</h3>
-        <ul>
-          {Object.keys(exchangeRates).slice(0, 10).map((currency) => (
-            <li key={currency}>
-              <span>USD to {currency}:</span> {exchangeRates[currency]}
-            </li>
-          ))}
-        </ul>
+    <footer style={{marginTop:"20px"}}>
+  
+      <div className="share-icons">
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-facebook"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-twitter"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-linkedin"></i>
+        </a>
       </div>
     </footer>
   );
 };
 
-export default Footer;
+export default Footer;

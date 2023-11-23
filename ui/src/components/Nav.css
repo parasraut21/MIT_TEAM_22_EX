@@ -1,0 +1,291 @@
+/* Start Global Rules */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0px;
+  }
+  
+  header {
+    min-height: 80px;
+    display: flex;
+  }
+  
+  @media (max-width: 767px) {
+    header {
+      min-height: auto;
+      display: initial;
+    }
+  }
+  
+  header .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 767px) {
+    header .nav-container {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  
+  header .logo {
+    color: #5d5d5d;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  
+  @media (max-width: 767px) {
+    header .logo {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  header .links {
+    display: flex;
+    align-items: center;
+  }
+  
+  @media (max-width: 767px) {
+    header .links {
+      text-align: center;
+      gap: 10px;
+    }
+  }
+  
+  header .links li {
+    margin-left: 30px;
+    color: #5d5d5d;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  @media (max-width: 767px) {
+    header .links li {
+      margin-left: auto;
+    }
+  }
+  
+  header .links li:last-child {
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #6c63ff;
+  }
+  
+  header .links li a:not(:last-child):hover {
+    color: #6c63ff;
+  }
+  body.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .dark-mode .links li {
+    color: #fff;
+  }
+  
+  /* Add styles for the toggle button */
+  .toggle-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+  }
+  
+  .toggle-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Your existing styles */
+  /* Add styles for dark mode */
+  body.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .dark-mode .links li {
+    color: #fff;
+  }
+  
+  /* Add styles for the round slider */
+  .theme-toggle {
+    position: relative;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .theme-toggle input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .theme-toggle label {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.3s;
+  }
+  
+  .theme-toggle label:after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 3px;
+    left: 4px;
+    transition: transform 0.3s;
+  }
+  
+  .theme-toggle input[type="checkbox"]:checked + label {
+    background-color: #007bff;
+    /* Background color when in dark mode */
+  }
+  
+  .theme-toggle input[type="checkbox"]:checked + label:after {
+    transform: translateX(26px);
+  }
+  
+  /* Your existing styles */
+  
+  /* Add styles for dark mode */
+  body.dark-mode {
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .dark-mode a {
+    color: #fff;
+    /* Change color for links */
+  }
+  
+  .dark-mode .links li {
+    color: #fff;
+    /* Change color for navigation menu items */
+  }
+  
+  .dark-mode .content h1,
+  .dark-mode .content p,
+  .dark-mode .toggle-button {
+    color: #fff;
+  }
+  
+  .sticky-container {
+    padding: 0px;
+    margin: 0px;
+    position: fixed;
+    right: -130px;
+    top: 200px;
+    width: 210px;
+    z-index: 1100;
+  }
+  
+  .links .signin:hover {
+    color: gold;
+    background-color: black;
+  }
+  
+  .dark-mode {
+    color: white;
+  }
+  
+  .links li {
+    font-size: larger;
+  }
+  
+  .nav-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  a {
+    text-decoration: none;
+    color: #5d5d5d;
+  }
+  .links li a:hover {
+    text-decoration: underline;
+  }
+  .box {
+    border-radius: 500px;
+    background: #90cee6;
+    opacity: 0.5;
+    filter: blur(200px);
+    width: 717px;
+    height: 691px;
+    position: absolute;
+    left: -117px;
+    top: -132px;
+    pointer-events: none;
+  }
+  .box-2 {
+    border-radius: 10px;
+    /* background: #c090e6; */
+    background: #90cee6;
+    opacity: 0.5;
+    filter: blur(200px);
+    width: 717px;
+    height: 691px;
+    position: absolute;
+    right: 0px;
+    bottom: -150px;
+    pointer-events: none;
+  }
+  .signin a {
+    color: white;
+  }
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    background: transparent; /* Set your desired background color */
+    z-index: 100;
+  }
+  .nav-container {
+    width: 80%;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 45px;
+    margin-top: 10px;
+  }
+  .dark-mode header {
+    background-color: black;
+  }
+  .nav-container {
+    border-radius: 45px;
+  }
+  
