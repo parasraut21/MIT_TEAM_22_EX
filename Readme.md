@@ -1,6 +1,6 @@
-# Currency Data Application with ChatGPT
+# Currency Data Application 
 
-This project is a full-stack web application built with React for the frontend, Node.js for the backend, and MySQL for data storage. The application focuses on currency data management and includes integration with ChatGPT for additional features.
+This project is a full-stack web application built with React for the frontend, Node.js for the backend, and MySQL for data storage. The application focuses on currency data management 
 
 ## Features
 
