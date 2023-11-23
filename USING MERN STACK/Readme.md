@@ -69,6 +69,7 @@ variable. For instance, currency pairs could be USD/INR, USD/GBP, USD/EUR, USD/C
 
 ![database](https://github.com/parasraut21/MIT_TEAM_22_EX/assets/111653346/1b3c7ba3-d7aa-4533-b6e1-ba03648482b3)
 
+![curr](https://github.com/parasraut21/MIT_TEAM_22_EX/assets/111653346/e89d7088-863c-4601-b112-a105d9b25a45)
 
 ## Made By
 
