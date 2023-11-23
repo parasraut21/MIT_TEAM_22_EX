@@ -5,8 +5,6 @@ This project is a full-stack web application built with React for the frontend, 
 ## Features
 
 - Display and manage currency data.
-- Clean up extra spaces in currency names.
-- Integration with ChatGPT for natural language interaction.
 
 ## Prerequisites
 
